@@ -1,0 +1,37 @@
+#! /bin/bash
+
+#C++ code dictionary.
+declare -A cppCode
+cppCode = (["main"] = "int main(){")
+cppCode = (["closeMain"] = "}")
+
+#Java code dictionary.
+#declare -A javaCode
+#javaCode = (["main"] = "class")
+
+#Python code dictionary.
+#declare -A pythonCode
+#pythonCode = (["main"] = "def main():")
+
+mkdir Batlab
+cd Batlab
+mkdir Arduino "C++" Java Linux Python "Raspberry Pi" WebDev
+
+echo "#! /bin/bash" >> conceptDir
+echo "mkdir Algorithms Basics Concurrency \"Control Statements\" \"Data Structures\" \"Exception Handling\" Functions Libraries Loops \"Object Oriented\" Tutoring" >> conceptDir
+echo "mkdir Basics/HelloWorld" >> conceptDir
+echo "cd Basics/HelloWorld/" >> conceptDir
+
+
+echo "#include <iostream>" >> helloWorld.cpp
+echo "int main(){" >> helloWorld.cpp
+echo "        std::cout << \"Hello, world.\" << std::endl;" >> helloWorld.cpp
+echo "        return 0;" >> helloWorld.cpp
+echo "}" >> helloWorld.cpp
+g++ -o helloWorld helloWorld.cpp
+chmod 744 helloWorld
+echo "cd .." >> conceptDir
+echo "cd .." >> conceptDir
+chmod 744 conceptDir
+cd Arduino/
+../conceptDir
